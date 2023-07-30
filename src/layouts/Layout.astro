@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource/inter/variable.css";
+import "@styles/global.css";
 
 export interface Props {
   title: string;
@@ -11,15 +12,15 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
+  "/opengraph.png",
   Astro.site
 ).toString();
 
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with Tailwind CSS";
+  ? title + " | " + "Braincare"
+  : "BrainCare - Centro de Neurofeedback y Psicoterapia";
 ---
 
 <!DOCTYPE html>
@@ -36,19 +37,19 @@ const makeTitle = title
       description="Astroship is a starter website template for Astro built with TailwindCSS."
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
+        creator: "@yoshuadiaz",
+        site: "@braincaremx",
+        card: "BrainCare - Centro de Neurofeedback y Psicoterapia",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `BrainCare - Centro de Neurofeedback y Psicoterapia`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "BrainCare - Screenshot",
         },
       }}
     />

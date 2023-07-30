@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Contactform from "@components/contactform.astro";
+---
+
+<Layout title="Contact">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Contacto</Fragment>
+      <Fragment slot="desc">Estamos aquí para ayudar</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-gray-800">BrainCare</h2>
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
+          Te gustaría agendar una cita o saber más sobre nuestros servicios, no
+          dudes en contactarnos.
+        </p>
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon
+              class="text-gray-400 flex-shrink-0 w-4 h-4"
+              name="uil:map-marker"
+            />
+
+            <span
+              >Querétaro, WTC Momentum, Torre Médica II, Paseo de la república,
+              KM 13020, Juriquilla</span
+            >
+          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon
+              class="text-gray-400 flex-shrink-0 w-4 h-4"
+              name="uil:envelope"
+            /><div href="mailto:Braincaremx@gmail.com">
+              Braincaremx@gmail.com
+            </div>
+          </div><div class="flex items-center mt-2 space-x-2 text-gray-600">
+            <Icon
+              class="text-gray-400 flex-shrink-0 w-4 h-4"
+              name="uil:phone"
+            /><div href="tel:+1 (987) 4587 899">44 21 26 38 35</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+</Layout>

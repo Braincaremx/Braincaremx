@@ -1,0 +1,54 @@
+---
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">¿Qué es el Neurofeedback?</Fragment>
+      <Fragment slot="desc">
+        <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+          <p class="mb-4 text-center text-2xl">
+            El Neurofeedback es una técnica que permite aprender a regular la
+            actividad eléctrica cerebral con la finalidad de mejorar la salud o
+            modificar conductas.
+          </p>
+
+          <p class="mb-4">
+            Es un tratamiento basado en el aprendizaje y la plasticidad cerebral
+            que entrena al sistema nervioso central para optimizar sus
+            capacidades y renei
+          </p>
+        </section>
+      </Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto mt-16 text-lg max-w-2xl">
+      <h3 class="text-2xl font-bold text-center mb-4">
+        Ventajas del Neurofeedback
+      </h3>
+      <p class="mb-4">
+        El neurofeedback es una técnica no invasiva, sin efectos secundarios que
+        puede ayudar en el tratamiento de: Alteraciones del Aprendizaje
+      </p>
+      <ul class="list-disc list-inside">
+        <li>Alteraciones del Lenguaje</li>
+        <li>Ansiedad</li>
+        <li>Alcoholismo y Drogadiccion</li>
+        <li>Depresión y otras alteraciones del ánimo</li>
+        <li>Desorden de estres post traumatico</li>
+        <li>Efectos de lesiones cerebrales</li>
+        <li>Epilepsia</li>
+        <li>
+          Transtorno de deficit de atención con o sin Hiperactividad o
+          Impulsividad
+        </li>
+        <li>Transtorno Obsesivo Compulsivo</li>
+        <li>Problemas de conducta</li>
+      </ul>
+    </div>
+  </Container>
+</Layout>
