@@ -4,14 +4,7 @@ import Button from "./ui/button.astro";
 
 <!-- To make this contact form work, create your free access key from https://web3forms.com/
      Then you will get all form submissions in your email inbox. -->
-<form
-  action="https://api.web3forms.com/submit"
-  method="POST"
-  id="form"
-  class="needs-validation"
-  novalidate>
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-  <!-- Create your free access key from https://web3forms.com/ -->
+<form name="contact" netlify>
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
     <input
@@ -26,19 +19,19 @@ import Button from "./ui/button.astro";
     </div>
   </div>
   <div class="mb-5">
-    <label for="email_address" class="sr-only">Correo electrónico</label><input
-      id="email_address"
-      type="email"
-      placeholder="Correo electrónico"
-      name="email"
+    <label for="phone_number" class="sr-only">Teléfono de contacto</label><input
+      id="phone_number"
+      type="tel"
+      placeholder="Teléfono"
+      name="phone"
       required
       class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
     />
     <div class="empty-feedback text-red-400 text-sm mt-1">
-      Por favor ingresa tu correo electrónico.
+      Por favor ingresa tu teléfono
     </div>
     <div class="invalid-feedback text-red-400 text-sm mt-1">
-      Por favor ingresa un correo electrónico válido.
+      Por favor ingresa un teléfono válido.
     </div>
   </div>
   <div class="mb-3">
@@ -77,51 +70,51 @@ import Button from "./ui/button.astro";
 </style>
 
 <script is:inline>
-const form = document.getElementById("form");
-const result = document.getElementById("result");
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  form.classList.add("was-validated");
-  if (!form.checkValidity()) {
-    form.querySelectorAll(":invalid")[0].focus();
-    return;
-  }
-  const formData = new FormData(form);
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
-  result.innerHTML = "Sending...";
+    result.innerHTML = "Sending...";
 
-  fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: json,
-  })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
-        result.classList.add("text-green-500");
-        result.innerHTML = json.message;
-      } else {
-        console.log(response);
-        result.classList.add("text-red-500");
-        result.innerHTML = json.message;
-      }
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
     })
-    .catch((error) => {
-      console.log(error);
-      result.innerHTML = "Something went wrong!";
-    })
-    .then(function () {
-      form.reset();
-      form.classList.remove("was-validated");
-      setTimeout(() => {
-        result.style.display = "none";
-      }, 5000);
-    });
-});
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add("text-red-500");
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
 </script>

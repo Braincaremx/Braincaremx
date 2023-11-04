@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { Picture } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
@@ -12,38 +11,53 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
 ---
 
 <Layout title="About">
+  <Sectionhead>
+    <Fragment slot="title">Quiénes somos</Fragment>
+    <Fragment slot="desc">
+      <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-sm">
+        <p class="mb-8 text-center text-xl">
+          En Brain Care, nos enorgullece ser más que solo un centro de salud
+          mental; somos un faro de apoyo, comprensión y transformación personal.
+          Estamos comprometidos en brindar un acompañamiento de excelencia
+          profesional y calidez humana, fomentando la salud mental, el bienestar
+          integral y la plenitud en la vida.
+        </p>
+      </section>
+    </Fragment>
+  </Sectionhead>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">Quiénes somos</Fragment>
-      <Fragment slot="desc">
-        <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-sm">
-          <p class="mb-4 text-center text-2xl">
-            Brain Care es un centro de Neurofeedback y Psicoterapia fundado en
-            Querétaro en el año 2021, dedicado al mejoramiento de la salud
-            mental en niños, adolescentes, adultos y adultos mayores.
-          </p>
+    <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+      <div class="mb-12">
+        <h2 class="text-2xl text-center mb-4 font-bold">Nuestra Historia</h2>
+        <p class="text-lg">
+          Nuestra historia comenzó en Querétaro en el año 2021, con la visión de
+          ofrecer un enfoque integral en el cuidado de la salud mental. Desde
+          entonces, hemos estado sirviendo a personas de todas las edades,
+          ofreciendo sesiones de psicoterapia y neurofeedback.
+        </p>
+      </div>
+      <div class="mb-12">
+        <h2 class="text-2xl text-center mb-4 font-bold">Nuestro Enfoque</h2>
+        <p class="text-lg">
+          En Brain Care, creemos que cada persona es única, y así es también su
+          camino hacia la salud mental y el bienestar. Nuestro equipo de
+          profesionales altamente capacitados estamos comprometidos a brindar
+          tratamientos individualizados creando un ambiente de confianza y
+          apoyo.
+        </p>
+      </div>
 
-          <p class="mb-4">
-            Nuestra misión es dar un acompañamiento de excelencia profesional,
-            cálido y dedicado a nuestros pacientes, promoviendo un bienestar
-            integral y una vida plena.
-          </p>
+      <div class="mb-12">
+        <h2 class="text-2xl text-center mb-4 font-bold">Nuestras Sedes</h2>
+        <p class="text-lg">
+          Agradecidos con su preferencia actualmente tenemos sedes en Querétaro
+          y Puebla, esto nos permite llegar a más personas y ofrecer nuestro
+          servicios especializado.
+        </p>
+      </div>
+    </section>
 
-          <p class="mb-4">
-            Con nuestra metodología de enfoque multidisciplinario y holístico,
-            atendemos diversas afecciones de la salud mental promoviendo a su
-            vez rehabilitación neuronal.
-          </p>
-          <p class="mb-4">
-            Todos nuestros protocolos de trabajo son personalizados y
-            específicos. Diseñados para lograr tus objetivos con la mayor
-            eficacia.
-          </p>
-        </section>
-      </Fragment>
-    </Sectionhead>
-
-    <div class="flex flex-col gap-3 mx-auto mt-16 text-xl">
+    <!-- <div class="flex flex-col gap-3 mx-auto mt-16 text-xl">
       <h2 class="font-bold text-3xl text-gray-800 text-center">Equipo</h2>
     </div>
     <div class="flex gap-10 mx-auto max-w-4xl mt-12">
@@ -73,6 +87,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>

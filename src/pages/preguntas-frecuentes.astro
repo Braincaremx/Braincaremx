@@ -1,0 +1,109 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+import { Accordion } from "@components/Accordion";
+
+const accordionData = [
+  {
+    title: "¿Cómo puedo saber si necesito psicoterapia o neurofeedback?",
+    description:
+      "<p>Nuestro equipo de expertos evaluará tus necesidades individuales durante una consulta inicial. Dependiendo de tus objetivos y circunstancias, recomendaremos el enfoque más adecuado para ti, ya sea psicoterapia, neurofeedback o una combinación de ambos.</p> ",
+  },
+  {
+    title: "El Neurofeedback tiene efectos secundarios?",
+    description:
+      "<p>En la literatura científica hay reportes de dolor de cabeza, cansancio o cambios en los patrones de sueño pero son reportados como leves y de rápida recuperación.</p> <p>No se contrapone a ningún medicamento.</p>",
+  },
+  {
+    title: "Para quién es el Neurofeedback?",
+    description:
+      "<p>Neurofeedback puede influir en nuestros estados emocionales, procesos psicológicos, funciones cognitivas (toma de decisiones, acelerar el aprendizaje, autocontrol, competencia, relaciones interpersonales) y en nuestros estados de conciencia.</p><p>El Neurofeedback ha demostrado ser eficaz para las siguientes condiciones: </p> <ul> <li>Déficit de atención con y sin hiperactividad </li> <li>Epilepsia</li> <li>Migraña</li> <li>Ansiedad </li> <li>Ansiedad social </li> <li>Depresión </li> <li>TOC</li> <li>Problemas del aprendizaje</li> <li>trauma del desarrollo</li> <li>Estrés post-traumático </li> <li> Peak Performance </li> <li>Regulación emocional </li> <li>Regulación del sueño</li> <li>Autismo</li> <li>Adicciones</li> <li>Acompañamiento en el duelo</li> <li>Tinnitus</li> </ul>",
+  },
+  {
+    title:
+      "A partir de que edad puede alguien tomar una sesión de Neurofeedback?",
+    description:
+      "<p>La edad mínima para tomar una sesion es de 6 años. No hay limite de edad.</p>",
+  },
+  {
+    title: "¿Es seguro tomar sesiones durante el embarazo?",
+    description: "<p>sI</p>",
+  },
+  {
+    title: "¿Cuánto tiempo dura un tratamiento típico?",
+    description:
+      "<p>La duración del tratamiento varía según cada persona y sus objetivos individuales.</p>",
+  },
+  {
+    title: "¿En cuánto tiempo obtendré los resultados?",
+    description:
+      "<p>La literatura y la experiencia de los usuarios reportan una mejoría dentro de las primeras cinco sesiones.</p>",
+  },
+  {
+    title: "¿Cuál es el proceso para programar una consulta inicial?",
+    description:
+      "<p>Programar una consulta inicial es fácil. Puedes llamarnos o llenar el formulario de contacto en nuestro sitio web. Estaremos encantados de coordinar una cita que se adapte a tu horario.</p>",
+  },
+  {
+    title: "¿Cómo puede el neurofeedback ayudar con las migrañas?",
+    description:
+      "<p>El neurofeedback ha demostrado ser efectivo en la reducción de la frecuencia e intensidad de las migrañas. Mediante el entrenamiento de la actividad cerebral, podemos ayudar a identificar y abordar los patrones neurológicos que contribuyen a las migrañas.</p>",
+  },
+  {
+    title:
+      "¿Cómo puede el neurofeedback mejorar el entrenamiento y el rendimiento máximo (Peak Performance)?",
+    description:
+      "<p>El neurofeedback puede ser una herramienta valiosa para atletas, artistas, ejecutivos y profesionales que buscan optimizar su rendimiento.</p>",
+  },
+  {
+    title: "¿De qué manera el neurofeedback puede ayudar con la ansiedad?",
+    description:
+      "<p>El neurofeedback puede ser una herramienta efectiva para la gestión de la ansiedad. Ayuda a entrenar el cerebro para reducir las respuestas excesivas al estrés, promover la relajación y mejorar la regulación emocional.</p>",
+  },
+  {
+    title:
+      "¿Puede el neurofeedback ser beneficioso para el Trastorno por Déficit de Atención e Hiperactividad (TDAH)?",
+    description:
+      "<p>Sí, el neurofeedback ha demostrado ser eficaz en el tratamiento del TDAH. Ayuda a mejorar la atención, la concentración y la autorregulación, lo que puede reducir los síntomas del TDAH y mejorar la calidad de vida.</p>",
+  },
+  {
+    title:
+      "¿Cómo puedo prepararme para mi primera consulta o sesión de tratamiento?",
+    description:
+      "<p>Proporcionar información sobre lo que los clientes pueden hacer antes de su primera cita o sesión puede ayudar a reducir la ansiedad y garantizar una experiencia más efectiva.</p>",
+  },
+];
+---
+
+<Layout title="Preguntas frecuentes">
+  <Sectionhead>
+    <Fragment slot="title">Preguntas frecuentes</Fragment>
+    <Fragment slot="desc">
+      <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+        <p class="mb-12 text-center text-2xl">
+          Aquí encontrarás respuestas a algunas de las preguntas más comunes
+          sobre nuestros servicios. Si tienes alguna pregunta adicional, no
+          dudes en ponerte en contacto con nosotros.
+        </p>
+      </section>
+    </Fragment>
+  </Sectionhead>
+  <Container>
+    <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+      <Accordion data={accordionData} client:idle />
+      <div class="mt-12 gap-2 flex flex-col">
+        <p>
+          Si tienes alguna pregunta adicional o deseas programar una consulta,
+          no dudes en ponerte en contacto con nosotros.
+        </p>
+        <p>
+          Estamos aquí para ayudarte en tu camino hacia la salud mental y el
+          bienestar. Esperamos que estas respuestas a preguntas frecuentes te
+          hayan proporcionado una visión clara de nuestros servicios.
+        </p>
+      </div>
+    </section>
+  </Container>
+</Layout>

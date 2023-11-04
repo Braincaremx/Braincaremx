@@ -8,22 +8,22 @@ const menuitems = [
   {
     title: "Agenda una cita",
     path: "/contacto",
+    isMain: true,
   },
   {
     title: "Quienes somos",
     path: "/quienes-somos",
+    isMain: false,
   },
   {
     title: "Qué es neurofeedback",
     path: "/que-es-neurofeedback",
+    isMain: false,
   },
   {
     title: "Preguntas frecuentes",
     path: "/preguntas-frecuentes",
-  },
-  {
-    title: "Testimonios",
-    path: "/Testimonios",
+    isMain: false,
   },
 ];
 ---
@@ -56,7 +56,15 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                      class={`flex lg:px-3 py-2  transition-all duration-150 ${
+                        item.isMain
+                          ? "bg-emerald-300 text-emerald-800 hover:text-emerald-600 hover:bg-emerald-200 rounded-xl"
+                          : "text-gray-600 hover:text-gray-900"
+                      } ${
+                        Astro.url.pathname === item.path
+                          ? "font-bold text-emerald-800"
+                          : ""
+                      }`}>
                       {item.title}
                     </a>
                   </li>

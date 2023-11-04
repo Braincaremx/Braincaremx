@@ -5,28 +5,38 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 ---
 
-<Layout title="About">
+<Layout title="Qué es Neurofeedback">
+  <Sectionhead>
+    <Fragment slot="title">¿Qué es el Neurofeedback?</Fragment>
+    <Fragment slot="desc">
+      <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+        <p class="mb-12 text-center text-2xl">
+          El Neurofeedback es una técnica no invasiva que entrena al cerebro
+          para auto-regularse y optimizar su actividad cerebral, lo que
+          contribuye a mejorar la salud mental.
+        </p>
+      </section>
+    </Fragment>
+  </Sectionhead>
   <Container>
-    <Sectionhead>
-      <Fragment slot="title">¿Qué es el Neurofeedback?</Fragment>
-      <Fragment slot="desc">
-        <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
-          <p class="mb-4 text-center text-2xl">
-            El Neurofeedback es una técnica que permite aprender a regular la
-            actividad eléctrica cerebral con la finalidad de mejorar la salud o
-            modificar conductas.
-          </p>
+    <section class="text-left mx-auto gap-4 max-w-2xl leading-snug text-lg">
+      <p class="mb-12 text-xl">
+        Nuestros tratamientos son altamente efectivos y personalizados para
+        satisfacer las necesidades individuales. Pueden resultar beneficiosos en
+        una amplia variedad de problemas, incluyendo la gestión del estrés, la
+        ansiedad, la depresión, el TDAH y otros trastornos. Durante el proceso,
+        nuestros profesionales certificados te acompañarán para fortalecer estos
+        cambios y lograr resultados positivos y sostenibles.
+      </p>
 
-          <p class="mb-4">
-            Es un tratamiento basado en el aprendizaje y la plasticidad cerebral
-            que entrena al sistema nervioso central para optimizar sus
-            capacidades y renei
-          </p>
-        </section>
-      </Fragment>
-    </Sectionhead>
+      <p class="mb-12 text-xl">
+        Utilizamos tecnología de vanguardia para promover estas mejoras y
+        alcanzar un mayor equilibrio en los niveles biológicos, mentales,
+        conductuales y emocionales.
+      </p>
+    </section>
 
-    <div class="flex flex-col gap-3 mx-auto mt-16 text-lg max-w-2xl">
+    <!-- <div class="flex flex-col gap-3 mx-auto mt-16 text-lg max-w-2xl">
       <h3 class="text-2xl font-bold text-center mb-4">
         Ventajas del Neurofeedback
       </h3>
@@ -49,6 +59,6 @@ import Sectionhead from "@components/sectionhead.astro";
         <li>Transtorno Obsesivo Compulsivo</li>
         <li>Problemas de conducta</li>
       </ul>
-    </div>
+    </div> -->
   </Container>
 </Layout>
