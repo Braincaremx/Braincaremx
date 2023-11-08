@@ -12,6 +12,7 @@ import Button from "./ui/button.astro";
   netlify>
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
+    <label for="name" class="sr-only">Nombre completo</label>
     <input
       type="text"
       placeholder="Nombre completo"
@@ -24,7 +25,8 @@ import Button from "./ui/button.astro";
     </div>
   </div>
   <div class="mb-5">
-    <label for="phone_number" class="sr-only">Teléfono de contacto</label><input
+    <label for="phone_number" class="sr-only">Teléfono de contacto</label>
+    <input
       id="phone_number"
       type="tel"
       placeholder="Teléfono"
@@ -40,6 +42,7 @@ import Button from "./ui/button.astro";
     </div>
   </div>
   <div class="mb-3">
+    <label for="message" class="sr-only">Mensaje</label>
     <textarea
       name="message"
       required
