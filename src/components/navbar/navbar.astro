@@ -28,52 +28,58 @@ const menuitems = [
 ];
 ---
 
-<Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
-    <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg w-[50px]">
-          <img src="/favicon.svg" alt="BrainCare Logo" />
-        </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+<header class="bg-white py-2 sticky top-0">
+  <Container>
+    <div class="flex flex-col lg:flex-row justify-between items-center my-5">
+      <Astronav>
+        <div class="flex w-full lg:w-auto items-center justify-between">
+          <a href="/" class="text-lg w-[50px]">
+            <img src="/logosmall.png" alt="BrainCare Logo" />
+          </a>
+          <div class="block lg:hidden">
+            <MenuIcon class="w-4 h-4 text-gray-800" />
+          </div>
         </div>
-      </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item, index) => (
-              <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
+        <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+          <ul class="flex flex-col lg:flex-row lg:gap-3">
+            {
+              menuitems.map((item, index) => (
+                <>
+                  {item.children && (
+                    <Dropdown
+                      title={item.title}
+                      children={item.children}
+                      lastItem={index === menuitems.length - 1}
+                    />
+                  )}
 
-                {!item.children && (
-                  <li>
-                    <a
-                      href={item.path}
-                      class={`flex lg:px-3 py-2  transition-all duration-150 ${
-                        item.isMain
-                          ? "bg-emerald-300 text-emerald-800 hover:text-emerald-600 hover:bg-emerald-200 rounded-xl"
-                          : "text-gray-600 hover:text-gray-900"
-                      } ${
-                        Astro.url.pathname === item.path
-                          ? "font-bold text-emerald-800"
-                          : ""
-                      }`}>
-                      {item.title}
-                    </a>
-                  </li>
-                )}
-              </>
-            ))
-          }
-        </ul>
-      </MenuItems>
-    </Astronav>
-  </header>
-</Container>
+                  {!item.children && (
+                    <li>
+                      <a
+                        href={item.path}
+                        class={`flex lg:px-3 px-2 py-2 transition-all duration-150  ${
+                          item.isMain
+                            ? `${
+                                Astro.url.pathname === item.path
+                                  ? "bg-[#572f16]"
+                                  : "bg-[#cd9191]"
+                              } text-[#fff9f5] hover:bg-[#572f16] font-bold  rounded-xl`
+                            : "text-[#572f16]"
+                        } ${
+                          Astro.url.pathname === item.path && !item.isMain
+                            ? "font-bold text-[#572f16]"
+                            : ""
+                        }`}>
+                        {item.title}
+                      </a>
+                    </li>
+                  )}
+                </>
+              ))
+            }
+          </ul>
+        </MenuItems>
+      </Astronav>
+    </div>
+  </Container>
+</header>

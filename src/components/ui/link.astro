@@ -25,7 +25,7 @@ const sizes = {
 const styles = {
   outline: "bg-cyan-100 text-cyan-900 border-0 hover:bg-cyan-50 ",
   primary:
-    "bg-red-100 text-red-900 hover:bg-red-50  border-2 border-transparent",
+    "bg-primary text-[#5f2f16] hover:bg-red-50  border-2 border-transparent",
   inverted: "bg-white text-black   border-2 border-transparent",
   muted: "bg-gray-100 hover:bg-gray-200   border-2 border-transparent",
 };
@@ -35,7 +35,7 @@ const styles = {
   href={href}
   {...rest}
   class:list={[
-    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
+    "rounded-full text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
     block && "w-full",
     sizes[size],
     styles[style],
