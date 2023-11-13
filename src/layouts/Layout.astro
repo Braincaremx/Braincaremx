@@ -13,7 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
   "/opengraph.png",
-  Astro.site
+  Astro.site,
 ).toString();
 
 const { title } = Astro.props;
@@ -23,7 +23,7 @@ const makeTitle = title
   : "BrainCare - Centro de Neurofeedback y Psicoterapia";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,10 +34,10 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="BrainCare - Centro de Neurofeedback y Psicoterapia"
       canonical={canonicalURL}
       twitter={{
-        creator: "@yoshuadiaz",
+        creator: "@BrainCareMx",
         site: "@braincaremx",
         card: "BrainCare - Centro de Neurofeedback y Psicoterapia",
       }}
