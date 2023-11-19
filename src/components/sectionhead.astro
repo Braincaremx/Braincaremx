@@ -3,7 +3,7 @@ const { align = "center", bgColor = "#f4eded" } = Astro.props;
 ---
 
 <div
-  class:list={["py-16 mb-8", align === "center" && "text-center"]}
+  class:list={["py-16 px-8 mb-8", align === "center" && "text-center"]}
   style={{ backgroundColor: bgColor }}>
   <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     <slot name="title">Title</slot>
