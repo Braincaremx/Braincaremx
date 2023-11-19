@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
@@ -54,27 +55,50 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           y Puebla, esto nos permite llegar a más personas y ofrecer nuestro
           servicios especializado.
         </p>
-        <h3 class="font-bold mt-4">Puebla</h3>
-        <ul class="list-disc pl-4 mb-4">
-          <li>
-            <a class="underline" href="https://wa.link/esplyg" target="_blank">
-            WhatsApp
-            </a>
-          </li>
-          <li>
-            <a class="underline" href="https://www.google.com/maps/place/BrainCare+-+Neurofeedback+y+Psicoterapia+Puebla/@19.0201784,-98.2648443,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc7237271cd63:0x761385ccb618fa1a!8m2!3d19.0201784!4d-98.2648443!16s%2Fg%2F11l69qgyg9?hl=en-MX&entry=ttu" target="_blank">Google Maps</a>
-          </li>
-        </ul>
-        <h3 class="font-bold">Querétaro</h3>
-        <ul  class="list-disc pl-4">
-          <li>
-            <a class="underline" href="https://wa.link/i4fle5" target="_blank">WhatsApp</a>
-          </li>
-          <li><a class="underline" href="https://www.google.com/maps/place/BrainCare+-+Psicoterapia+y+Neurofeedback/@20.6836213,-100.4340026,17z/data=!3m1!4b1!4m6!3m5!1s0x85d35986b86a2c09:0x5650f1b4984303bd!8m2!3d20.6836213!4d-100.4340026!16s%2Fg%2F11t3ytkdjt?hl=en-MX&entry=ttu" target="_blank">
-            Google Maps
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:map-marker" />
+
+            <span
+              >
+              <a class="underline" href="https://www.google.com/maps/place/BrainCare+-+Psicoterapia+y+Neurofeedback/@20.6836213,-100.4340026,17z/data=!3m1!4b1!4m6!3m5!1s0x85d35986b86a2c09:0x5650f1b4984303bd!8m2!3d20.6836213!4d-100.4340026!16s%2Fg%2F11t3ytkdjt?hl=en-MX&entry=ttu" target="_blank">
+            Querétaro, WTC Momentum, Torre Médica II, Paseo de la república,
+              KM 13020, Juriquilla
           </a>
-        </li>
-        </ul>
+              </span
+            >
+          </div><div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:Braincaremx@gmail.com" class="underline">
+              Braincaremx@gmail.com
+            </a>
+          </div><div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:phone" /><a
+              href="https://wa.link/i4fle5" class="underline">
+              +52 44 21 26 38 35
+            </a>
+          </div>
+        </div>
+        <hr class="mt-5" />
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:map-marker" />
+
+            <span
+              ><a class="underline" href="https://www.google.com/maps/place/BrainCare+-+Neurofeedback+y+Psicoterapia+Puebla/@19.0201784,-98.2648443,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc7237271cd63:0x761385ccb618fa1a!8m2!3d19.0201784!4d-98.2648443!16s%2Fg%2F11l69qgyg9?hl=en-MX&entry=ttu" target="_blank">Torre Médica MAC, Anillo periférico ecológico 3507, Cholula,
+              Puebla</a></span>             
+          </div><div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:Braincarepuebla@gmail.com" class="underline">
+              Braincarepuebla@gmail.com
+            </a>
+          </div><div class="flex items-center mt-2 space-x-2">
+            <Icon class="flex-shrink-0 w-4 h-4" name="uil:phone" /><a
+              href="https://wa.link/esplyg" class="underline">
+              +52 221 586 8898
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
